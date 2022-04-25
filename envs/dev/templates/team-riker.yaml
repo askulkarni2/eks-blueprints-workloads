@@ -13,10 +13,10 @@ spec:
   source:
     repoURL: {{ .Values.spec.source.repoURL }}
     targetRevision: {{ .Values.spec.source.targetRevision }}
-    path: teams/team-riker/dev
+    path: {{ .Values.spec.source.path }}
     helm:
       parameters:
-      - name: spec.ingress.host
+      - name: ingress.host
         value: {{ .Values.spec.ingress.host }}
   syncPolicy:
     automated:
